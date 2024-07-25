@@ -1,0 +1,5 @@
+client:
+	rm tests.txt ; i=1 ; while [ $i -lt 18005 ] ; do ARG=("$(shuf -i 1-1000 -n 100)") ; ./push_swap $ARG | wc -l >> tests.txt ; clear ; i=$((i + 1)) ; echo $i ; done
+
+server:
+	while [ 1 ] ; do ./a.out tests.txt ; sleep 0.5 ; clear ; done
